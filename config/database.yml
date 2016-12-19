@@ -3,7 +3,7 @@ connection: &connection
   encoding: unicode
   host:     localhost
   pool: 5
-  username: workshops_test
+  username: postgres
   password:
 
 development:
