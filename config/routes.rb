@@ -9,5 +9,10 @@ Rails.application.routes.draw do
   resources :teachers do
     get :subjects
   end
-
+  
+  resources :subjects do
+    collection do
+       get 'report'
+    end
+  end
 end
