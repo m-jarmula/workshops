@@ -10,9 +10,5 @@ Rails.application.routes.draw do
     get :subjects
   end
   
-  resources :subjects do
-    collection do
-       get 'report'
-    end
-  end
+  get 'report/subjects', to: "reports#subjects"
 end
