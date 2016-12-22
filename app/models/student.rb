@@ -11,6 +11,8 @@ class Student < ActiveRecord::Base
   protected
   
   def birthdate_in_valid_range
-    self.errors.add(:birthdate, "is not valid") unless ((Time.now - 70.years)..(Time.now - 16.years)).include?(self.birthdate) and self.birthdate.present?
+      if not ((Time.now - 71.years)..(Time.now - 16.years)).include?(self.birthdate) and not self.birthdate.blank?
+          self.errors.add(:birthdate, "is not valid")
+      end
   end
 end
